@@ -1,0 +1,17 @@
+.body {
+    padding: 5px;
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+  /* background-color: rgba(175, 246, 246, 0.8); */
+}
+.body div{
+    padding: 15px;
+    width: 80vw;
+    border-radius: 30px;
+    background-color: antiquewhite;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.4);
+
+}

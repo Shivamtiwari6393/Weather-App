@@ -1,0 +1,42 @@
+.header {
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header h2 {
+  text-align: center;
+  margin: 5px;
+  padding: 20px;
+  border-radius: 40px;
+  background-color: rgba(175, 246, 246, 0.8);
+  box-shadow: 0 0 3px 3px rgba(226, 226, 226, 0.4);
+  width: 70vw;
+}
+h2:hover{
+  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.4);
+
+}
+.header div input {
+  text-align: center;
+  border: none;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 0 0 3px 3px rgba(226, 226, 226, 0.4);
+
+}
+.header button {
+  background-color: #9af99a;
+  border: none;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 0 0 3px 3px rgba(226, 226, 226, 0.4);
+
+}
+.header button:hover{
+    background-color: #46ff46;
+    box-shadow: 0 0 6px 1px rgb(0, 0, 0, 0.4);
+}

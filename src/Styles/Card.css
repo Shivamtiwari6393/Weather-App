@@ -1,0 +1,27 @@
+.card {
+  font-size: 0.8rem;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: hsl(228, 68%, 78%);
+  margin: 10px;
+  border: none;
+  width: 100px;
+  min-height: 100px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 3px 3px rgba(226, 226, 226, 0.4);
+}
+.card:hover {
+  transform: scale(1.02);
+}
+p {
+  margin-top: 10px;
+}
+@media  only screen and (max-width:300px) {
+  .card{
+    font-size: 0.6rem;
+}
+}
