@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     height: 50px;
+    user-select: none;
   /* background-color: rgba(175, 246, 246, 0.8); */
 }
 .body div{
