@@ -10,15 +10,15 @@ export default function Section(props) {
           <Card
             cardName="Temperature"
             cardValue={weatherdata["currentConditions"]["temp"]}
-          />
+            >F</Card>
           <Card
             cardName="Feel Like"
             cardValue={weatherdata["currentConditions"]["feelslike"]}
-          />
+          >F</Card>
           <Card
             cardName="Cloud Cover"
             cardValue={weatherdata["currentConditions"]["cloudcover"]}
-          />
+          >%</Card>
           <Card
             cardName="Dew"
             cardValue={weatherdata["currentConditions"]["dew"]}
@@ -43,7 +43,7 @@ export default function Section(props) {
           <Card
             cardName="Rain Probability"
             cardValue={weatherdata["currentConditions"]["precipprob"]}
-          />
+          >%</Card>
 
           <Card
             cardName="Solar Radiation"
@@ -78,7 +78,7 @@ export default function Section(props) {
         </>
       ) : (
         <>
-          <Card cardName="Temperature" cardValue="Loading..." />
+          <Card cardName="Temperature" cardValue="Loading..."/>
           <Card cardName="Feel Like" cardValue="Loading..." />
           <Card cardName="Cloud Cover" cardValue="Loading..." />
           <Card cardName="Dew" cardValue="Loading..." />
@@ -92,7 +92,7 @@ export default function Section(props) {
           <Card cardName="Wind Speed" cardValue="Loading..." />
           <Card cardName="Latitude" cardValue="Loading..." />
           <Card cardName="Longitude" cardValue="Loading..." />
-          {/* <Card cardName="Time" cardValue="Loading..." /> */}
+          <Card cardName="Time" cardValue="Loading..." />
           <Card cardName="Snow" cardValue="Loading..." />
           <Card cardName="Snow Depth" cardValue="Loading..." />
           <Card cardName="Visibility" cardValue="Loading..." />
