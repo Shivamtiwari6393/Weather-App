@@ -1,5 +1,5 @@
-#cardsection{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:center;
+#cardsection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

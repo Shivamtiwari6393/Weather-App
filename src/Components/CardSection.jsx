@@ -1,5 +1,6 @@
 import Card from "./Card";
 import "../Styles/CardSection.css";
+
 export default function Section(props) {
   let { weatherdata } = props;
   return (
