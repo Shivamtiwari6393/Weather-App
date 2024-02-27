@@ -1,0 +1,23 @@
+@keyframes l {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.load {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgb(235, 229, 229);
+  border-left-color: rgb(61, 70, 64);
+  animation: l 1s linear infinite;
+}
+
+.loading{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

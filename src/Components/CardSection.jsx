@@ -78,7 +78,7 @@ export default function Section(props) {
         </>
       ) : (
         <>
-          <Card cardName="Temperature" cardValue="Loading..."/>
+          <Card cardName="Temperature" cardValue= "Loading..."/>
           <Card cardName="Feel Like" cardValue="Loading..." />
           <Card cardName="Cloud Cover" cardValue="Loading..." />
           <Card cardName="Dew" cardValue="Loading..." />

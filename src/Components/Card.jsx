@@ -1,15 +1,21 @@
 import "../Styles/Card.css";
-
-const Card = ({cardName,cardValue,children}) => {
+import Loading from "./Loading";
+const Card = ({ cardName, cardValue, children }) => {
   return (
     <div className="container">
       <div className="card">
         <p>
           <span>{cardName}</span>
         </p>
-        <p>
-          <span>{cardValue}   {children}</span>
-        </p>
+        {cardValue !== "Loading..."  ? (
+          <p>
+            <span>
+              {cardValue} {children}
+            </span>
+          </p>
+        ) : (
+          <Loading />
+        )}
       </div>
     </div>
   );

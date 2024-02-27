@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "./Components/Header";
-import Body from "./Components/Body";
+import Address from "./Components/Address";
 import CardSection from "./Components/CardSection";
 function App() {
   const [weatherdata, setweatherdata] = useState(null);
@@ -12,7 +12,6 @@ function App() {
 
   useEffect(() => {
     const key = "EV5UHBCN2BSPRT5ZVS5JW7ZG2";
-    console.log(input);
     const api = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}?key=${key}`;
     fetch(api)
       .then((response) => {
@@ -31,8 +30,8 @@ function App() {
   return (
     <>
       <Header updatedinput={updatedinput} />
-      <Body weatherdata={weatherdata} />
-      <CardSection weatherdata={weatherdata} />
+      <Address weatherdata={weatherdata} />
+      <CardSection weatherdata={weatherdata} />e
     </>
   );
 }
