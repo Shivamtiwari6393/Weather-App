@@ -28,7 +28,7 @@ export default function Section(props) {
           <Card
             cardName="Humidity"
             cardValue={weatherdata["currentConditions"]["humidity"]}
-          />
+        >%</Card>
           <Card
             cardName="Sun Rise"
             cardValue={weatherdata["currentConditions"]["sunrise"]}
@@ -49,7 +49,7 @@ export default function Section(props) {
           <Card
             cardName="Solar Radiation"
             cardValue={weatherdata["currentConditions"]["solarradiation"]}
-          />
+        ></Card>
           <Card
             cardName="UV Index"
             cardValue={weatherdata["currentConditions"]["uvindex"]}
