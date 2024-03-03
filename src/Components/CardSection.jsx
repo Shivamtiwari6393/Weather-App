@@ -3,18 +3,19 @@ import "../Styles/CardSection.css";
 
 export default function Section(props) {
   let { weatherdata } = props;
+
   return (
     <div id="cardsection">
       {weatherdata ? (
         <>
           <Card
             cardName="Temperature"
-            cardValue={weatherdata["currentConditions"]["temp"]}
-            >F</Card>
+            cardValue={((weatherdata["currentConditions"]["temp"] -32)*(5/9)).toFixed(2)}
+            >C</Card>
           <Card
             cardName="Feel Like"
-            cardValue={weatherdata["currentConditions"]["feelslike"]}
-          >F</Card>
+            cardValue={(weatherdata["currentConditions"]["feelslike"] -32)*(5/9).toFixed(2)}
+          >C</Card>
           <Card
             cardName="Cloud Cover"
             cardValue={weatherdata["currentConditions"]["cloudcover"]}
