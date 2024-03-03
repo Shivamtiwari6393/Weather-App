@@ -31,7 +31,7 @@ function App() {
     <>
       <Header updatedinput={updatedinput} />
       <Address weatherdata={weatherdata} />
-      <CardSection weatherdata={weatherdata} />e
+      <CardSection weatherdata={weatherdata} />
     </>
   );
 }

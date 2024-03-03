@@ -60,10 +60,7 @@ export default function Section(props) {
           />
           <Card cardName="Latitude" cardValue={weatherdata["latitude"]} />
           <Card cardName="Longitude" cardValue={weatherdata["longitude"]} />
-          {/* <Card
-            cardName="Time"
-            cardValue={weatherdata["currentConditions"]["datetime"]}
-          /> */}
+
           <Card
             cardName="Snow"
             cardValue={weatherdata["currentConditions"]["snow"]}
