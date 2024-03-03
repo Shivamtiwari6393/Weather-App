@@ -14,7 +14,7 @@ export default function Section(props) {
             >C</Card>
           <Card
             cardName="Feel Like"
-            cardValue={(weatherdata["currentConditions"]["feelslike"] -32)*(5/9).toFixed(2)}
+            cardValue={((weatherdata["currentConditions"]["feelslike"] -32)*(5/9)).toFixed(2)}
           >C</Card>
           <Card
             cardName="Cloud Cover"
