@@ -4,7 +4,7 @@ import Address from "./Components/Address";
 import CardSection from "./Components/CardSection";
 function App() {
   const [weatherdata, setweatherdata] = useState(null);
-  const [input, setinput] = useState("Sultanpur");
+  const [input, setinput] = useState("Lucknow");
 
   const updatedinput = (updatedinput) => {
     setinput(updatedinput);
