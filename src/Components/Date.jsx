@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import "../Styles/Date.css";
 export default function Date({
   weatherData,
@@ -11,6 +11,7 @@ export default function Date({
 }) {
   useEffect(() => {
     findMatchingDay(date);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [date,time]);
 
   const handleTime = (e) => {
