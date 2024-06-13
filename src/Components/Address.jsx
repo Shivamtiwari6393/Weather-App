@@ -1,10 +1,11 @@
 import "../Styles/Address.css";
 
 export default function Body(props) {
-  let { weatherdata } = props;
+  let { weatherData } = props;
+  // console.log(weatherData," inside address")
   return (
     <div className="body">
-      <div className={weatherdata ? "weather-available" : "shimmer"}>{weatherdata ? weatherdata["resolvedAddress"] : ""}</div>
+      <div className={weatherData ? "weather-available" : "shimmer"}>{weatherData ? weatherData["resolvedAddress"] : ""}</div>
     </div>
   );
 }

@@ -2,76 +2,77 @@ import Card from "./Card";
 import "../Styles/CardSection.css";
 
 export default function Section(props) {
-  let { weatherdata } = props;
+  let { updatedWeatherData, weatherData } = props;
+  // console.log(updatedWeatherData, "-updated weather data inside card section", weatherData,"weatherdata");
 
   return (
     <div id="cardsection">
-      {weatherdata ? (
+      {updatedWeatherData ? (
         <>
           <Card
             cardName="Temperature"
-            cardValue={((weatherdata["currentConditions"]["temp"] -32)*(5/9)).toFixed(2)}
+            cardValue={((updatedWeatherData["temp"] -32)*(5/9)).toFixed(2)}
             >C</Card>
           <Card
             cardName="Feel Like"
-            cardValue={((weatherdata["currentConditions"]["feelslike"] -32)*(5/9)).toFixed(2)}
+            cardValue={((updatedWeatherData["feelslike"] -32)*(5/9)).toFixed(2)}
           >C</Card>
           <Card
             cardName="Cloud Cover"
-            cardValue={weatherdata["currentConditions"]["cloudcover"]}
+            cardValue={updatedWeatherData["cloudcover"]}
           >%</Card>
           <Card
             cardName="Dew"
-            cardValue={weatherdata["currentConditions"]["dew"]}
+            cardValue={updatedWeatherData["dew"]}
           />
 
           <Card
             cardName="Humidity"
-            cardValue={weatherdata["currentConditions"]["humidity"]}
+            cardValue={updatedWeatherData["humidity"]}
         >%</Card>
           <Card
             cardName="Sun Rise"
-            cardValue={weatherdata["currentConditions"]["sunrise"]}
+            cardValue={weatherData["currentConditions"]["sunrise"]}
           />
           <Card
             cardName="Sun Set"
-            cardValue={weatherdata["currentConditions"]["sunset"]}
+            cardValue={weatherData["currentConditions"]["sunset"]}
           />
           <Card
             cardName="Pressure"
-            cardValue={weatherdata["currentConditions"]["pressure"]}
+            cardValue={updatedWeatherData["pressure"]}
           />
           <Card
             cardName="Rain Probability"
-            cardValue={weatherdata["currentConditions"]["precipprob"]}
+            cardValue={updatedWeatherData["precipprob"]}
           >%</Card>
 
           <Card
             cardName="Solar Radiation"
-            cardValue={weatherdata["currentConditions"]["solarradiation"]}
+            cardValue={updatedWeatherData["solarradiation"]}
         ></Card>
           <Card
             cardName="UV Index"
-            cardValue={weatherdata["currentConditions"]["uvindex"]}
+            cardValue={updatedWeatherData["uvindex"]}
           />
           <Card
             cardName="Wind Speed"
-            cardValue={weatherdata["currentConditions"]["windspeed"]}
+            cardValue={updatedWeatherData["windspeed"]}
           />
-          <Card cardName="Latitude" cardValue={weatherdata["latitude"]} />
-          <Card cardName="Longitude" cardValue={weatherdata["longitude"]} />
+          <Card cardName="Latitude" cardValue={weatherData["latitude"]} />
+          <Card cardName="Longitude" cardValue={weatherData["longitude"]} />
 
           <Card
             cardName="Snow"
-            cardValue={weatherdata["currentConditions"]["snow"]}
+            cardValue={updatedWeatherData["snow"]}
           />
           <Card
             cardName="Snow Depth"
-            cardValue={weatherdata["currentConditions"]["snowdepth"]}
+            cardValue={updatedWeatherData["snowdepth"]}
           />
           <Card
             cardName="Visibility"
-            cardValue={weatherdata["currentConditions"]["visibility"]}
+            cardValue={updatedWeatherData["visibility"]}
           />
         </>
       ) : (

@@ -6,23 +6,29 @@
   align-items: center;
 }
 
-.header h2 {
+.header h3 {
   text-align: center;
-  margin: 5px;
-  padding: 20px;
+  margin: 5px 0px 15px 0px;
+  padding: 10px;
   border-radius: 40px;
   background-color: rgba(175, 246, 246, 0.8);
-  box-shadow: 0 0 3px 3px rgba(226, 226, 226, 0.4);
-  width: 70vw;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.488);
+  width: 90vw;
 }
-h2:hover {
-  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.4);
+h3:hover {
+  box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.4);
+}
+
+.header .location{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .header div input {
   text-align: center;
   border: none;
   margin: 5px;
-  padding: 10px;
+  padding: 5px;
   border-radius: 30px;
   box-shadow: 0 0 3px 3px rgba(226, 226, 226, 0.4);
 }
