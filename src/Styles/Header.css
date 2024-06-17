@@ -1,4 +1,4 @@
-.header {
+.Header {
   user-select: none;
   user-select: none;
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.header h3 {
+.Header h3 {
   text-align: center;
   margin: 5px 0px 15px 0px;
   padding: 10px;
@@ -19,12 +19,12 @@ h3:hover {
   box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.4);
 }
 
-.header .location{
+.Header .location {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.header div input {
+.Header div input {
   text-align: center;
   border: none;
   margin: 5px;
@@ -32,7 +32,7 @@ h3:hover {
   border-radius: 30px;
   box-shadow: 0 0 3px 3px rgba(226, 226, 226, 0.4);
 }
-.header button {
+.Header button {
   background-color: #9af99a;
   border: none;
   margin: 5px;
@@ -40,7 +40,7 @@ h3:hover {
   border-radius: 30px;
   box-shadow: 0 0 3px 3px rgba(226, 226, 226, 0.4);
 }
-.header button:hover {
+.Header button:hover {
   background-color: #46ff46;
   box-shadow: 0 0 6px 1px rgb(0, 0, 0, 0.4);
 }

@@ -1,8 +1,7 @@
-import { useEffect} from "react";
+import { useEffect } from "react";
 import "../Styles/Date.css";
 export default function Date({
   weatherData,
-  updatedWeatherData,
   setUpdatedWeatherData,
   time,
   setTime,
@@ -11,8 +10,8 @@ export default function Date({
 }) {
   useEffect(() => {
     findMatchingDay(date);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [date,time]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [date, time]);
 
   const handleTime = (e) => {
     setTime(e.target.value);
@@ -26,26 +25,20 @@ export default function Date({
     let matchingday = weatherData["days"].find(
       (day) => day.datetime === updatedDate
     );
-    // console.log(matchingday, "- mathing day");
     findMatchingTime(matchingday);
   };
 
-  let correctTime=()=>{
+  let correctTime = () => {
     let splitTime = time.split(":");
     let hour = splitTime[0] + ":00:00";
-    return hour
-  }
-  
+    return hour;
+  };
 
   const findMatchingTime = (matchingday) => {
-    // console.log(matchingday, "matching day inside time");
-
     let matchingTime = matchingday["hours"].find((timee) => {
-      let hour = correctTime()
-      // console.log(hour);
+      let hour = correctTime();
       return timee.datetime === hour;
     });
-    // console.log(matchingTime, "-mathing time");
     setUpdatedWeatherData(matchingTime);
   };
 
@@ -61,8 +54,12 @@ export default function Date({
         </select>
       </div>
       <div className="time">
-        {/* {console.log(time)} */}
-        <select name="time" id="time" value={correctTime()} onChange={handleTime}>
+        <select
+          name="time"
+          id="time"
+          value={correctTime()}
+          onChange={handleTime}
+        >
           {weatherData["days"][0]["hours"].map((time) => (
             <option key={time.datetime} value={time.datetime}>
               {time.datetime}

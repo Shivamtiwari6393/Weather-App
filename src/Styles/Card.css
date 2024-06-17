@@ -1,4 +1,4 @@
-.card {
+.Card {
   user-select: none;
   font-size: 0.8rem;
   user-select: none;
@@ -15,15 +15,14 @@
   text-align: center;
   box-shadow: 0px 0px 3px 3px rgba(226, 226, 226, 0.4);
 }
-.card:hover {
+.Card:hover {
   transform: scale(1.02);
 }
 p {
   margin-top: 10px;
-
 }
 @media only screen and (max-width: 300px) {
-  .card {
+  .Card {
     font-size: 0.6rem;
   }
 }

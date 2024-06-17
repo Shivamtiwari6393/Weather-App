@@ -1,35 +1,41 @@
 import Card from "./Card";
 import "../Styles/CardSection.css";
 
-export default function Section(props) {
-  let { updatedWeatherData, weatherData } = props;
-  // console.log(updatedWeatherData, "-updated weather data inside card section", weatherData,"weatherdata");
-
+export default function CardSection({
+  updatedWeatherData,
+  weatherData,
+  requesting,
+}) {
   return (
-    <div id="cardsection">
-      {updatedWeatherData ? (
+    <div className="CardSection">
+      {updatedWeatherData && !requesting ? (
         <>
           <Card
             cardName="Temperature"
-            cardValue={((updatedWeatherData["temp"] -32)*(5/9)).toFixed(2)}
-            >C</Card>
+            cardValue={((updatedWeatherData["temp"] - 32) * (5 / 9)).toFixed(2)}
+          >
+            C
+          </Card>
           <Card
             cardName="Feel Like"
-            cardValue={((updatedWeatherData["feelslike"] -32)*(5/9)).toFixed(2)}
-          >C</Card>
+            cardValue={(
+              (updatedWeatherData["feelslike"] - 32) *
+              (5 / 9)
+            ).toFixed(2)}
+          >
+            C
+          </Card>
           <Card
             cardName="Cloud Cover"
             cardValue={updatedWeatherData["cloudcover"]}
-          >%</Card>
-          <Card
-            cardName="Dew"
-            cardValue={updatedWeatherData["dew"]}
-          />
+          >
+            %
+          </Card>
+          <Card cardName="Dew" cardValue={updatedWeatherData["dew"]} />
 
-          <Card
-            cardName="Humidity"
-            cardValue={updatedWeatherData["humidity"]}
-        >%</Card>
+          <Card cardName="Humidity" cardValue={updatedWeatherData["humidity"]}>
+            %
+          </Card>
           <Card
             cardName="Sun Rise"
             cardValue={weatherData["currentConditions"]["sunrise"]}
@@ -45,16 +51,15 @@ export default function Section(props) {
           <Card
             cardName="Rain Probability"
             cardValue={updatedWeatherData["precipprob"]}
-          >%</Card>
+          >
+            %
+          </Card>
 
           <Card
             cardName="Solar Radiation"
             cardValue={updatedWeatherData["solarradiation"]}
-        ></Card>
-          <Card
-            cardName="UV Index"
-            cardValue={updatedWeatherData["uvindex"]}
-          />
+          ></Card>
+          <Card cardName="UV Index" cardValue={updatedWeatherData["uvindex"]} />
           <Card
             cardName="Wind Speed"
             cardValue={updatedWeatherData["windspeed"]}
@@ -62,10 +67,7 @@ export default function Section(props) {
           <Card cardName="Latitude" cardValue={weatherData["latitude"]} />
           <Card cardName="Longitude" cardValue={weatherData["longitude"]} />
 
-          <Card
-            cardName="Snow"
-            cardValue={updatedWeatherData["snow"]}
-          />
+          <Card cardName="Snow" cardValue={updatedWeatherData["snow"]} />
           <Card
             cardName="Snow Depth"
             cardValue={updatedWeatherData["snowdepth"]}
@@ -77,7 +79,7 @@ export default function Section(props) {
         </>
       ) : (
         <>
-          <Card cardName="Temperature" cardValue= "Loading..."/>
+          <Card cardName="Temperature" cardValue="Loading..." />
           <Card cardName="Feel Like" cardValue="Loading..." />
           <Card cardName="Cloud Cover" cardValue="Loading..." />
           <Card cardName="Dew" cardValue="Loading..." />

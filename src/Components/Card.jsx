@@ -3,11 +3,11 @@ import Loading from "./Loading";
 const Card = ({ cardName, cardValue, children }) => {
   return (
     <div className="container">
-      <div className="card">
+      <div className="Card">
         <p>
           <span>{cardName}</span>
         </p>
-        {cardValue !== "Loading..."  ? (
+        {cardValue !== "Loading..." ? (
           <p>
             <span>
               {cardValue} {children}

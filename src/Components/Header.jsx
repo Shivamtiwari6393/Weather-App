@@ -1,21 +1,16 @@
 import "../Styles/Header.css";
-const Header = (props) => {
+const Header = ({ setUpdatedWeatherData, setInput }) => {
   function changeinput() {
     const input = document.getElementById("input").value;
-    if(input === ''){
-      alert('Please enter a location')
-      return
+    if (input === "") {
+      alert("Please enter a location");
+      return;
     }
-    if(props.weatherdata != null){
-      if(props['weatherdata']['resolvedAddress'] === input){
-      return
-    }}
 
-    props.clearweatherdata()
-    props.updatedinput(input);
+    setInput(input);
   }
   return (
-    <div className="header">
+    <div className="Header">
       <h3>Weather App</h3>
       <div className="location">
         <input type="text" placeholder="Location" id="input" />
