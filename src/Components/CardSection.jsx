@@ -12,7 +12,6 @@ export default function CardSection({ weatherData, date, time }) {
     (hour) => hour.datetime === time
   );
 
-  console.log(weatherData);
 
   let cardData = [
     {
