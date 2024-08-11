@@ -34,8 +34,3 @@
   font-weight: bold;
 }
 
-@media only screen and (max-width: 300px) {
-  .card {
-    font-size: 0.6rem;
-  }
-}
