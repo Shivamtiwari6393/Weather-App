@@ -2,68 +2,79 @@ import { useState, useEffect } from "react";
 import Header from "./Components/Header";
 import Address from "./Components/Address";
 import CardSection from "./Components/CardSection";
-import Date from "./Components/Date";
+import DateTime from "./Components/DateTime";
+import Loading from "./Components/Loading";
+import "./Styles/App.css"
+
 function App() {
-  const [weatherData, setWeatherData] = useState("");
-  const [updatedWeatherData, setUpdatedWeatherData] = useState("");
+  const [weatherData, setWeatherData] = useState(null);
   const [input, setInput] = useState("Lucknow");
-  const [time, setTime] = useState("");
-  const [date, setDate] = useState("");
-  const [requesting,setRequesting] = useState(false)
+  const [dateTime, setDateTime] = useState({ time: "", date: "" });
+  const [requesting, setRequesting] = useState(false);
+  const [error, setError] = useState("");
+
   useEffect(() => {
-    setRequesting(true)
-    const key = "EV5UHBCN2BSPRT5ZVS5JW7ZG2";
-    const api = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}?key=${key}`;
-    fetch(api)
-      .then((response) => {
+    const fetchWeatherData = async () => {
+      setRequesting(true);
+      setError("");
+
+      const key = "EV5UHBCN2BSPRT5ZVS5JW7ZG2";
+      const api = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}?key=${key}`;
+
+      try {
+        const response = await fetch(api);
+
         if (!response.ok) {
           if (response.status === 400) {
-            alert("location is not valid,Please Re-enter the location");
+            throw new Error(
+              "Location is not valid. Please re-enter the location."
+            );
           } else {
-            alert(response.status + " error");
+            throw new Error(`${response.status} error`);
           }
-          return weatherData;
-        } else {
-          return response.json();
         }
-      })
-      .then((data) => {
+
+        const data = await response.json();
         setWeatherData(data);
-        if(data){
-        setTime(data["currentConditions"]["datetime"]);
-        setDate(data["days"][0]["datetime"]);
+
+        if (data) {
+          setDateTime({
+            time: data["currentConditions"]["datetime"],
+            date: data["days"][0]["datetime"],
+          });
         }
-        setRequesting(false)
-      })
-      .catch((e) =>{
+      } catch (e) {
+        setError(e.message);
+      } finally {
         setRequesting(false);
-        alert(
-          "Internet connection is either slow or Disconnected.Please refresh  "+ e
-        )}
-      );
+      }
+    };
+
+    fetchWeatherData();
   }, [input]);
 
   return (
     <>
-      <Header setInput={setInput} setUpdatedWeatherData={setUpdatedWeatherData} />
-      <Address weatherData={weatherData} />
-      {weatherData ? (
-        <Date
-          weatherData={weatherData}
-          setUpdatedWeatherData={setUpdatedWeatherData}
-          date={date}
-          setDate={setDate}
-          time={time}
-          setTime={setTime}
-        />
-      ) : (
-        ""
+      {requesting && <Loading />}
+      <Header input={input} setInput={setInput} setError = {setError}/>
+      {error && <p className="error-message">{error}</p>}
+
+      {weatherData && (
+        <>
+          <Address weatherData={weatherData} />
+          <DateTime
+            days={weatherData.days}
+            date={dateTime.date}
+            time={dateTime.time}
+            setDateTime={setDateTime}
+          />
+          <CardSection
+            weatherData={weatherData}
+            date={dateTime.date}
+            time={dateTime.time}
+          />
+        </>
       )}
-      <CardSection
-        updatedWeatherData={updatedWeatherData}
-        weatherData={weatherData}
-        requesting={requesting}
-      />
     </>
   );
 }

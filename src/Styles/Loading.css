@@ -7,17 +7,33 @@
   }
 }
 .load {
-  width: 20px;
+  /* width: 20px;
   height: 20px;
   border-radius: 50%;
   border: 2px solid rgb(235, 229, 229);
   border-left-color: rgb(61, 70, 64);
+  animation: l 1s linear infinite; */
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db; 
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   animation: l 1s linear infinite;
 }
 
 .Loading{
-  margin-top: 10px;
+  /* margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
 }

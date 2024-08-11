@@ -1,30 +1,38 @@
+import { useState } from "react";
 import "../Styles/Header.css";
-const Header = ({ setUpdatedWeatherData, setInput }) => {
-  function changeinput() {
-    const input = document.getElementById("input").value;
-    if (input === "") {
-      alert("Please enter a location");
+
+const Header = ({ input, setInput, setError }) => {
+  const [inputValue, setInputValue] = useState(input);
+
+  const handleInputChange = (event) => {
+    setError("");
+    setInputValue(event.target.value);
+  };
+
+  const handleSubmit = () => {
+    if (inputValue.trim() === "") {
+      setError("Please enter a location");
       return;
     }
+    setInput(inputValue);
+  };
 
-    setInput(input);
-  }
   return (
-    <div className="Header">
+    <div className="header-container">
       <h3>Weather App</h3>
-      <div className="location">
-        <input type="text" placeholder="Location" id="input" />
-        <button
-          type="submit"
-          id="button"
-          onClick={() => {
-            changeinput();
-          }}
-        >
+      <div className="input-container">
+        <input
+          type="text"
+          placeholder="Location"
+          value={inputValue}
+          onChange={handleInputChange}
+        />
+        <button type="submit" onClick={handleSubmit}>
           Go
         </button>
       </div>
     </div>
   );
 };
+
 export default Header;

@@ -1,4 +1,4 @@
-.Header {
+.header-container {
   user-select: none;
   user-select: none;
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.Header h3 {
+.header-container h3 {
   text-align: center;
   margin: 5px 0px 15px 0px;
   padding: 10px;
@@ -19,28 +19,31 @@ h3:hover {
   box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.4);
 }
 
-.Header .location {
+.header-container .input-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.Header div input {
+.header-container div input {
+  font-weight: bold;
+  color: rgb(114, 47, 138);
   text-align: center;
   border: none;
   margin: 5px;
   padding: 5px;
   border-radius: 30px;
-  box-shadow: 0 0 3px 3px rgba(226, 226, 226, 0.4);
+  box-shadow: 0px 2px 5px 1px rgb(128, 128, 128);
 }
-.Header button {
+.header-container button {
+  font-weight: 600;
   background-color: #9af99a;
   border: none;
   margin: 5px;
   padding: 10px;
   border-radius: 30px;
-  box-shadow: 0 0 3px 3px rgba(226, 226, 226, 0.4);
+  box-shadow: 0px 1px 5px 1px rgb(128, 128, 128);
 }
-.Header button:hover {
+.header-container button:hover {
   background-color: #46ff46;
-  box-shadow: 0 0 6px 1px rgb(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 6px 5px rgba(109, 182, 72, 0.4);
 }
