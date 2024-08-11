@@ -1,7 +1,13 @@
 .card-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 90%;
+  justify-content: center;
   margin: 0 auto;
+}
+
+
+@media screen and (min-width: 550px ) {
+.card-section{
+  width: 90%;
+}  
 }
